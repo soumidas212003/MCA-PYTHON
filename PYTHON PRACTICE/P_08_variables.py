@@ -1,0 +1,5 @@
+name=input("What is your name? ")
+type=input("Hey "+name+", How are you? ")
+print(type)
+length=len(name)
+print(name+" -This name length is: ",length)
