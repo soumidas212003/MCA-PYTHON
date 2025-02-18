@@ -12,5 +12,6 @@ list=[]
 for i in range(n):
     ele=int(input("Enter the number: "))
     list.append(ele)
-print(list)
+print("Before sort list is: ",list)
 print("After sort list is: ",bubble_sort(list))
+
