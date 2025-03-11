@@ -69,8 +69,8 @@ class CLL:
     def insert_nth(self,mydata,posn):
         newnode=Node(mydata)
         if self.head is None:
-            self.head=newnode
             newnode.next=newnode
+            self.head=newnode
         elif posn==1:
             curnode=self.head
             while curnode.next is not self.head:

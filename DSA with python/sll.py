@@ -66,6 +66,7 @@ class SLL:
             self.head=curnode.next
             del(curnode)
         else:
+            curnode=self.head
             i=1
             while i<=posn-2 and curnode.next is not None:
                 curnode=curnode.next
