@@ -85,26 +85,27 @@ class CLL:
                 curnode=curnode.next
                 i+=1
             newnode.next=curnode.next
-            curnode.next=newnode
-    
-        curnode=self.head
+            curnode.next=newnode  
+    def delete_nth(self,posn):
+        temp=self.head
         if self.head is None:
-            print("Empty list ...Deletion not possible...")
+            print("Empty list...Deletion not possible..")
+            return
         elif posn==1:
-            self.head=curnode.next
-            del(curnode)
+            while temp.next is not self.head:
+                temp=temp.next
+            self.head=self.head.next
+            del(temp.next)
+            temp.next=self.head
         else:
+            curnode=self.head.next
             i=1
-            while i<=posn-2 and curnode.next is not None:
+            while i<=posn-1 and curnode.next is not self.head:
                 curnode=curnode.next
+                temp=temp.next
                 i+=1
-            if curnode.next is None:
-                print("Node not found..")
-            else:
-                temp=curnode.next
-                curnode.next=temp.next
-                del(temp)  
-    
+            temp.next=curnode.next
+
 list1=CLL()
 list1.insert_beg(10)
 list1.display()
@@ -119,4 +120,6 @@ list1.display()
 list1.insert_nth(5,5)
 list1.display()
 list1.insert_nth(5,1)
+list1.display()
+list1.delete_nth(2)
 list1.display()
