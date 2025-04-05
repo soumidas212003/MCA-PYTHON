@@ -43,7 +43,7 @@ while(True):
             print("Item at top of stack = ",num)
     elif ch==4:
         if s.isempty():
-            print("Stack Underflow")
+            print("Stack is Empty")
         else:
             s.display()
     elif ch==5:
