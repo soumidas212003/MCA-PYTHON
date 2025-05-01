@@ -9,7 +9,7 @@ class stack:
     def pop(self):
         return self.mylist.pop()
     def peek(self):
-        return self.mylist[-1]
+        return self.mylist[-1]  
 def postfixevaluation(src):
     st=stack()
     for ch in src:
