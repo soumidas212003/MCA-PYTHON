@@ -39,7 +39,7 @@ class SLL:
             self.head=None
         else:
             curnode=self.head
-            if curnode.next.next is not None:
+            while curnode.next.next is not None:
                 curnode=curnode.next
             del(curnode.next)
             curnode.next=None
@@ -66,7 +66,6 @@ class SLL:
             self.head=curnode.next
             del(curnode)
         else:
-            curnode=self.head
             i=1
             while i<=posn-2 and curnode.next is not None:
                 curnode=curnode.next
@@ -102,53 +101,26 @@ class SLL:
             nextnode=curnode.next
             curnode.next=prevnode
         self.head=curnode
-    def node_sorted(self, mydata):
-        temp = Node(mydata)
-        # If the list is empty or the new node should be the new head
-        if self.head is None or self.head.data > mydata:
-            temp.next = self.head
-            self.head = temp
-            return
-        # Traverse the list to find the correct position
-        curnode = self.head
-        while curnode.next is not None and curnode.next.data < mydata:
-            curnode = curnode.next
-        # Insert the node
-        temp.next = curnode.next
-        curnode.next = temp
 
 list1=SLL()
-list1.insert_beg(10)
-list1.display()
 
+list1.insert_beg(5)
+list1.display()
+list1.insert_beg(6)
+list1.display()
+list1.insert_end(10)
+list1.display()
+list1.insert_nth(4,3)
+list1.display()
 list1.delete_end()
 list1.display()
-
-list1.insert_end(20)
-list1.display()
-list1.insert_end(30)
-list1.display()
-
-list1.delete_end()
-list1.display()
-
-list1.insert_end(40)
-list1.display()
-list1.insert_end(60)
-list1.display()
-
 list1.delete_first()
 list1.display()
-
-
-list1.insert_nth(50,2)
+list1.delete_nth(2)
 list1.display()
-list1.insert_nth(100,8)
+list1.insert_beg(6)
 list1.display()
-list1.insert_nth(30,1)
-list1.display()
-
-list1.delete_nth(9)
+list1.insert_end(10)
 list1.display()
 list1.delete_nth(5)
 list1.display()
@@ -157,6 +129,4 @@ print("Number of Nodes:",c)
 l=(list1.largestnode()).data
 print("largest node's data =",l)
 list1.reverse()
-list1.display()
-list1.node_sorted(2)
 list1.display()

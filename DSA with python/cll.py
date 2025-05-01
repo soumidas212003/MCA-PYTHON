@@ -87,24 +87,32 @@ class CLL:
             newnode.next=curnode.next
             curnode.next=newnode  
     def delete_nth(self,posn):
-        temp=self.head
         if self.head is None:
-            print("Empty list...Deletion not possible..")
-            return
+            print("Empty circular Linked list")
         elif posn==1:
-            while temp.next is not self.head:
-                temp=temp.next
-            self.head=self.head.next
-            del(temp.next)
-            temp.next=self.head
+            curnode=self.head
+            if curnode.next==curnode:
+                self.head=None
+                del(curnode)
+            else:
+                while(curnode.next is not self.head):
+                    curnode=curnode.next
+                curnode.next=self.head.next
+                temp=self.head
+                self.head=self.head.next
+                del(temp)
         else:
-            curnode=self.head.next
+            curnode=self.head
             i=1
-            while i<=posn-1 and curnode.next is not self.head:
+            while i<posn-2 and curnode.next is not self.head:
                 curnode=curnode.next
-                temp=temp.next
                 i+=1
-            temp.next=curnode.next
+            if curnode.next is self.head:
+                print("Invalid node number")
+            else:
+                temp=curnode.next
+                curnode.next=temp.next
+                del(temp)
 
 list1=CLL()
 list1.insert_beg(10)
