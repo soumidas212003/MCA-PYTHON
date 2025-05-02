@@ -29,7 +29,7 @@ def infix2postfix (src):
         elif ch in string.ascii_letters or ch in  string.digits: 
             trgt+=ch 
         else: 
-            while not st.isempty() and st.peek() != '(' and getPriority (st.peek())>= getPriority (ch): 
+            while not st.isempty() and st.peek() != '(' and getPriority(st.peek())>= getPriority(ch): 
                 trgt+=st.pop() 
             st.push(ch) 
     while not st.isempty(): 

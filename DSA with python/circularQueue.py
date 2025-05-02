@@ -53,7 +53,7 @@ while (True):
     print("\t2. Dequeue") 
     print("\t3. Peek") 
     print("\t4. Display") 
-    print("\t5. Exit") 
+    print("\t5. Exit")   
     print("===============================") 
     choice=int(input("Enter your Choice: ")) 
     if choice==1:
