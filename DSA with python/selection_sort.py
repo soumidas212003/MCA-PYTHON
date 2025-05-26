@@ -5,7 +5,8 @@ def selection_sort(list):
         for j in range(i+1,n):
             if list[j]<list[min]:
                 min=j
-        list[i],list[min]=list[min],list[i]
+        if min != i:
+            list[i],list[min]=list[min],list[i]
     return list
 n=int(input("Enter the size: "))
 list=[]
